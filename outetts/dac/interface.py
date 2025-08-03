@@ -1,4 +1,4 @@
-import dac
+import descript_audio_codec as dac
 import torch
 import tqdm 
 import torch.nn as nn
