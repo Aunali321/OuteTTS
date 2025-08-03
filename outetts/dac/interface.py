@@ -1,4 +1,4 @@
-import descript_audio_codec as dac
+from descript_audio_codec import DAC
 import torch
 import tqdm 
 import torch.nn as nn
@@ -59,7 +59,7 @@ class DacInterface:
             model_path = self._get_model()
             
         self.device = torch.device(device if device is not None else "cuda" if torch.cuda.is_available() else "cpu")
-        self.model = dac.DAC.load(model_path).to(self.device).eval()
+        self.model = DAC.load(model_path).to(self.device).eval()
         self.sr = 24000
 
     def _get_model(self):
